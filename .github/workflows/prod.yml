@@ -19,5 +19,5 @@ jobs:
           username: ${{ secrets.PROD_USER }}
           key: ${{ secrets.PROD_KEY }}
           script: |
-            cd ~/lemp-sites/marcos_funes/prod
+            cd /home/lemp-sites/marcos_funes/prod
             git pull origin main
