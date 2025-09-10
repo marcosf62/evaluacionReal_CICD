@@ -1,0 +1,23 @@
+name: Deploy Staging
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Deploy to Staging Server
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.STAGING_HOST}}
+          username: ${{ secrets.STAGING_USER}}
+          key: ${{ secrets.STAGING_KEY}}
+          script: |
+            cd ~/lemp-sites/marcos_funes/staging
+            git pull origin develop
