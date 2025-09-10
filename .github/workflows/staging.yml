@@ -19,5 +19,5 @@ jobs:
           username: ${{ secrets.STAGING_USER}}
           key: ${{ secrets.STAGING_KEY}}
           script: |
-            cd /home/lemp-sites/marcos_funes/staging
+            cd /home/alumno/lemp-sites/marcos_funes/staging
             git pull origin develop
